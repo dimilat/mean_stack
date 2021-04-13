@@ -48,6 +48,19 @@ app.get('/api/posts', (req, res, next) => {
   });
 });
 
+app.put('/api/posts/:id', (req, res, next) => {
+  const post = new Post({
+    _id : req.body.id,
+    title: req.body.title,
+    content : req.body.content
+  });
+  Post.updateOne({ _id: req.params.id }, post).then(result => {
+    res.status(200).json({
+      message: 'Post updated succesfully'
+    });
+  });
+});
+
 app.delete('/api/posts/:id', (req, res, next) => {
   Post.deleteOne({ _id: req.params.id }).then(result => {
     res.status(200).json({
