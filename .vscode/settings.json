@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "Project Skeleton",
-        "Server"
+        "Server",
+        "Database"
     ]
 }
