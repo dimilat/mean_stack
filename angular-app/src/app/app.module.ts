@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -20,17 +20,18 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { FooterComponent } from './footer/footer.component';
+import { AuthInterceptor } from './auth/auth-interceptor';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     PostCreateComponent,
     HeaderComponent,
     PostListComponent,
     SignupComponent,
     LoginComponent,
-      FooterComponent
-   ],
+    FooterComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -50,7 +51,7 @@ import { FooterComponent } from './footer/footer.component';
     MatProgressSpinnerModule,
     MatPaginatorModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
