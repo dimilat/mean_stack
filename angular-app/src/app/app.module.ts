@@ -19,16 +19,18 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     PostCreateComponent,
     HeaderComponent,
     PostListComponent,
     SignupComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+      FooterComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

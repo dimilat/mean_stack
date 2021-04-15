@@ -1,8 +1,12 @@
 {
     "conventionalCommits.scopes": [
-        "Project Skeleton",
-        "Server",
-        "Database",
-        "Frontend"
+      "workspace",
+      "app",
+      "libraries",
+      "dependencies",
+      "configuration",
+      "core",
+      "back-end",
+      "front-end",
     ]
-}
+  }
