@@ -11,7 +11,11 @@ const app = express();
 // database email: dimilathian77@gmail.com
 // database username: dimilat
 // database password: 8tCpizVYVPGvwPa2
-mongoose.connect('mongodb+srv://dimilat:8tCpizVYVPGvwPa2@meanproject.7awv6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+mongoose.connect(
+  'mongodb+srv://dimilat:' +
+    process.env.MONGO_ATLAS_PW +
+    '@meanproject.7awv6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+)
   .then(() => {
     console.log('Connected to mongoDB');
   })
